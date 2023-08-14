@@ -11,7 +11,11 @@ class LanguageModel(AbstractModel):
 
     # Req. 2
     def to_dict(self):
-        raise NotImplementedError
+        return {
+            "_id": str(self.data["_id"]),
+            "name": self.data["name"],
+            "acronym": self.data["acronym"],
+        }
 
     # Req. 3
     @classmethod
